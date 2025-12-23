@@ -1,17 +1,20 @@
 name: Unzip File
 
 on:
-  workflow_dispatch: # Allows manual trigger
+  workflow_dispatch:
   push:
     branches:
-      - main # Runs on push to the main branch
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   unzip:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the main branch
+      # Step 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -21,11 +24,11 @@ jobs:
           unzip volcano-mobile-pwa.zip -d .
           ls -l
 
-      # Step 3: Commit and push changes back to the main branch
+      # Step 3: Commit and push unzipped files
       - name: Commit and push unzipped files
         run: |
-          git config --global user.name "Vahidking75"
+          git config --global user.name "vahidking75"
           git config --global user.email "vahid.king62@gmail.com"
           git add .
-          git commit -m "Unzipped volcano-mobile-pwa.zip contents"
+          git commit -m "Unzipped volcano-mobile-pwa.zip contents" || echo "No changes to commit"
           git push origin main
