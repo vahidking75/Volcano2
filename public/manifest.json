@@ -1,0 +1,15 @@
+{
+  "name": "Volcano: Virtuoso Image Generation Assistance",
+  "short_name": "Volcano",
+  "description": "Virtuoso image generation assistance: a mobile-friendly prompt studio with online vocabulary intelligence.",
+  "start_url": "/studio",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#10b981",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-256.png", "sizes": "256x256", "type": "image/png" },
+    { "src": "/icon-384.png", "sizes": "384x384", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
