@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: volcano-virtuoso
+    runtime: docker
+    plan: starter
+    autoDeploy: true
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VOLCANO_DB_PATH
+        value: /var/data/volcano.db
+
+    disk:
+      name: volcano-data
+      mountPath: /var/data
+      sizeGB: 1
